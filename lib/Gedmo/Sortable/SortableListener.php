@@ -379,7 +379,9 @@ class SortableListener extends MappedEventSubscriber
         }
 
         // Add relocation
-        $this->addRelocation($hash, $config['useObjectClass'], $groups, $position, -1, -1);
+        if ($position !== null) {
+            $this->addRelocation($hash, $config['useObjectClass'], $groups, $position, -1, -1);
+        }
     }
 
     /**
